@@ -36,7 +36,7 @@ class SignUpController
              //going to back to front page
              //header("location: ../index.php?error=none");
           
-             include_once('../views/HomeView.php');
+             include_once('views/HomeView.php');
           }
     }
 

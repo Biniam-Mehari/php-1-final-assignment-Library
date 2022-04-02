@@ -2,7 +2,7 @@
 include_once "../db.php";
 class SignupService{
 
-    private DB $db;
+    //private DB $db;
 
     public function __construct()
     {
@@ -10,19 +10,19 @@ class SignupService{
     }
 
 
-    protected function setUser(){
+    protected function setUser($fname,$lname,$email,$pwd){
 
         
 
         $data = array(
 
-            'firstName' => $_POST['firstName'],
+            'firstName' => $fname,
 
-            'lastName' => $_POST['lastName'],
+            'lastName' => $lname,
 
-            'email' => $_POST['email'],
+            'email' => $email,
 
-            '_password' => $_POST['password']
+            '_password' => $pwd
 
         );
 
@@ -95,12 +95,13 @@ class SignupService{
         // return  $resultCheck;
     }
     public function insertuser($data){
+        $db = DB::getInstance();
        
-        $count = $this->db->prepare("INSERT into users (firstName, lastName, email, _password) VALUES (:firstName, :lastName, :email, :_password)");
+        $count = $db->prepare("INSERT into `Account` (firstName, lastName, email, `password`) VALUES (:firstName, :lastName, :email, :password)");
 
 
 
-        $count->execute(["firstName" => $data['firstName'], "lastName" => $data['lastName'], "email" => $data['email'], "password" => $data['password']]);
+        $count->execute(["firstName" => $data['firstName'], "lastName" => $data['lastName'], "email" => $data['email'], "password" => md5($data['_password'])]);
 
     }
 
