@@ -1,10 +1,10 @@
 <?php
 
-class ContactController
+class MyListController
 {
     public function index()
     {
-        
+        include ('views/MyListView.php');
     }
 
     public function about()

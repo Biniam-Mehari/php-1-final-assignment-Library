@@ -10,7 +10,7 @@ include 'Menubar.php';
 
     <h2>Login Page</h2><br>    
     <div class="login">    
-    <form id="login" method="post" action="controller/logincontroller.php">    
+    <form id="login" method="post" action="login/form">    
         <label><b>email</b></label>   
         <br>  
         <input type="text" name="email" id="email" placeholder="email">    

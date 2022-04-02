@@ -23,7 +23,7 @@
 
         <li><a href="home">Home</a></li>
         <li><a href="BookView">Books</a></li>
-        <li><a href="">My List</a></li>
+        <li><a href="mylist">My List</a></li>
         <li><a href="signup">Become a member</a></li>
         <li><a href="addnewbookview">Add new Book</a></li>
        

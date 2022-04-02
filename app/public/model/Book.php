@@ -9,17 +9,6 @@ class Book
     private ?string $author = null;
     private ?string $imageId = null;
     
-    
-
-   // function __construct($id,$title,$description,$author,$imageId){
-   //     $this->id = $id;
-    //    $this->title = $title;
-    //    $this->description = $description;
-   //     $this->author = $author;
-    //    $this->imageId = $imageId;
-   // }
-
-
     /**
      * Get the value of title
      */ 

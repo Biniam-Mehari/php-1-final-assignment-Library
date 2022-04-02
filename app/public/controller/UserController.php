@@ -19,7 +19,7 @@ class UserController
     }
 
     public function loginUser(){
-
+     $this->userservice->loginUser();
     }
 
     public function logOutUser(){
@@ -39,6 +39,6 @@ class UserController
             $this->userservice->setUser($fname, $lname, $email, $pwd);
         }
 
-        header('views/LoginView.php');
+       // header('views/LoginView.php');
     }
 }
