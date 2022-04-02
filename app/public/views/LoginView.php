@@ -20,12 +20,11 @@ include 'Menubar.php';
         <input type="Password" name="pwd" id="pwd" placeholder="Password">    
         <br><br>    
         <button type="submit" name="submit">Login</button>          
-        <br><br>    
-        <input type="checkbox" id="check">    
-        <span>Remember me</span>    
-        <br><br>    
-        Forgot <a href="#">Password</a>    
-    </form>     
+          
+    </form>    
+    
+    <!-- javascript to check user account and display error messsage  -->
+<script src="../js/login.js"></script>
 </div>    
 </body>    
 </html> 

@@ -33,8 +33,11 @@ include 'Menubar.php';
         <br><br>  
         <button type="submit" name="submit">SIGN UP</button>       
         <br>    
-          
-    </form>     
+        <section id="ErrorMessage"></section>
+    </form>   
+    
+    <!-- javascript to check user information and display error messsage  -->
+<script src="../js/signUp.js"></script>
 </div>    
 </body>    
 </html> 

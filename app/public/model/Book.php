@@ -3,20 +3,21 @@
 class Book
 {
 
-    public int $id;
-    public string $title;
-    public string $description;
-    public string $author;
+    private ?int $id = 1;
+    private ?string $title = null;
+    private ?string $description = null;
+    private ?string $author = null;
+    private ?string $imageId = null;
     
     
 
-    function __construct($id,$title,$description,$author,$datetime){
-        $this->id = $id;
-        $this->title = $title;
-        $this->description = $description;
-        $this->author = $author;
-        $this->datetime = $datetime;
-    }
+   // function __construct($id,$title,$description,$author,$imageId){
+   //     $this->id = $id;
+    //    $this->title = $title;
+    //    $this->description = $description;
+   //     $this->author = $author;
+    //    $this->imageId = $imageId;
+   // }
 
 
     /**
@@ -59,26 +60,7 @@ class Book
         return $this;
     }
 
-    /**
-     * Get the value of datetime
-     */ 
-    public function getDatetime()
-    {
-        return $this->datetime;
-    }
-
-    /**
-     * Set the value of datetime
-     *
-     * @return  self
-     */ 
-    public function setDatetime($datetime)
-    {
-        $this->datetime = $datetime;
-
-        return $this;
-    }
-
+   
     /**
      * Get the value of description
      */ 
@@ -95,6 +77,46 @@ class Book
     public function setDescription($description)
     {
         $this->description = $description;
+
+        return $this;
+    }
+
+    /**
+     * Get the value of imageId
+     */ 
+    public function getImageId()
+    {
+        return $this->imageId;
+    }
+
+    /**
+     * Set the value of imageId
+     *
+     * @return  self
+     */ 
+    public function setImageId($imageId)
+    {
+        $this->imageId = $imageId;
+
+        return $this;
+    }
+
+    /**
+     * Get the value of id
+     */ 
+    public function getId()
+    {
+        return $this->id;
+    }
+
+    /**
+     * Set the value of id
+     *
+     * @return  self
+     */ 
+    public function setId($id)
+    {
+        $this->id = $id;
 
         return $this;
     }

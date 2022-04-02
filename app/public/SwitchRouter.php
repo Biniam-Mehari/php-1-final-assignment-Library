@@ -16,41 +16,61 @@ class SwitchRouter
                 $controller->index();
                 break;
             case 'login':
-                require __DIR__ . '/controller/LoginController.php';
-                $controller = new Logincontroller();
-                $controller->index();
+                require __DIR__ . '/controller/UserController.php';
+                $controller = new UserController();
+                $controller->loginView();
                 break;
+                case 'logout':
+                    require __DIR__ . '/controller/UserController.php';
+                    $controller = new UserController();
+                    $controller->logOutUser();
+                    break;
             case 'signup':
-                require __DIR__ . '/controller/SignUpController.php';
-                $controller = new SignUpController();
-                $controller->index();
-                break;  
+                require __DIR__ . '/controller/UserController.php';
+                $controller = new UserController();
+                $controller->signUpView();
+                break;
             case 'signup/form':
-                    require __DIR__ . '/controller/SignUpController.php';
-                    $controller = new SignUpController();
-                    $controller->signup();
-                    break;  
+                require __DIR__ . '/controller/UserController.php';
+                $controller = new UserController();
+                $controller->setUser();
+                break;
+            case 'login/form':
+                require __DIR__ . '/controller/UserController.php';
+                $controller = new UserController();
+                $controller->loginUser();
+                break;
             case 'homecontroller/index':
                 require __DIR__ . '/controller/HomeController.php';
                 $controller = new HomeController();
                 $controller->index();
-                break;  
+                break;
             case 'BookView':
                 require __DIR__ . '/controller/BookController.php';
                 $controller = new BookController();
                 $controller->index();
-                break; 
+                break;
             case 'mylist':
                 require __DIR__ . '/controller/MyListController.php';
                 $controller = new BookController();
                 $controller->index();
-                break;          
-               
+                break;
+                case 'addnewbookview':
+                    require __DIR__ . '/controller/BookController.php';
+                    $controller = new BookController();
+                    $controller->addNewbookview();
+                    break;
+                case 'newbook/form':
+                    require __DIR__ . '/controller/BookController.php';
+                    $controller = new BookController();
+                    $controller->addNewbook();
+                    break;
+                
             default:
-            require __DIR__ . '/controller/HomeController.php';
-            $controller = new HomeController();
-            $controller->index();
-            break;
+                require __DIR__ . '/controller/HomeController.php';
+                $controller = new HomeController();
+                $controller->index();
+                break;
         }
     }
 }

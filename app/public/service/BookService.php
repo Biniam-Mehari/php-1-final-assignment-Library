@@ -1,25 +1,57 @@
 <?php
-require_once('../db.php');
-require_once('model/Article.php');
+//require_once('../db.php');
+//require_once('model/Book.php');
 
-class ArticleService
+require_once("../db.php");
+require_once("model/Book.php");
+
+
+class BookService 
 {
 
     private DB $db;
 
     public function __construct()
     {
-        $this->db = DB::getInstance();
+      $this->db = DB::getInstance();
     }
 
-    public function getAll()
+    public function getAllBooks()
     {
-
-        $stmt = $this->db->prepare("select * from article");
-        $stmt->setFetchMode(PDO::FETCH_CLASS, 'Article');
+        //$db = DB::getInstance();
+        $stmt = $this->db->prepare("select bookId,title,description,author,imageId from Book");
+        $stmt->setFetchMode(PDO::FETCH_CLASS, 'Book');
         $stmt->execute();
 
-        $articles = $stmt->fetchAll();
-        return $articles;
+        $books = $stmt->fetchAll();
+        return $books;
+
+        
     }
+    public function setBook($title,$description,$author,$imageid){
+
+
+        $data = array(
+
+            'title' => $title,
+
+            'description' => $description,
+
+            'author' => $author,
+
+            'imageid' => $imageid
+
+        );
+        $this->insertBook($data);
+    }
+    public function insertBook($data)
+    {
+       // $db = DB::getInstance();
+        $stmt = $this->db->prepare("INSERT into Book (title, `description`, author, imageId) VALUES (:title,  :description,:author, :imageId)");
+
+        $stmt->execute(["title" => $data['title'],  "description" => $data['description'],"author" => $data['author'], "imageId" => $data['imageid']]);
+    }
+    
+   
+
 }
