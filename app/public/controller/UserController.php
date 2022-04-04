@@ -34,11 +34,10 @@ class UserController
             $fname = $_POST["fname"];
             $lname = $_POST["lname"];
             $email = $_POST["email"];
-            $pwd = $_POST["pwd"];
-            $rpwd = $_POST["rpwd"];
+            $pwd = $_POST["pwd"]; 
             $this->userservice->setUser($fname, $lname, $email, $pwd);
         }
 
-       // header('views/LoginView.php');
+        echo "<script>location.assign('../login')</script>";
     }
 }

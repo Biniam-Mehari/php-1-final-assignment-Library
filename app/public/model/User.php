@@ -7,37 +7,9 @@ class User
     private string $lastName;
     private string $email;
     private string $password;
+    private string $role;
 
-    public function __construct()
-
-    {
-
-        $get_arguments       = func_get_args();
-
-        $number_of_arguments = func_num_args();
-
-        if (method_exists($this, $method_name = '__construct'.$number_of_arguments)) {
-
-            call_user_func_array(array($this, $method_name), $get_arguments);
-
-        }
-
-    }
-    function __construct2($email,$password){
-        
-        $this->email = $email;
-        $this->password = $password;
-    }
-
-    function __construct5($id,$firstName,$lastName,$email,$password){
-        $this->id = $id;
-        $this->firstName = $firstName;
-        $this->lastName = $lastName;
-        $this->email = $email;
-        $this->password = $password;
-    }
-
-
+   
     /**
      * Get the value of id
      */ 
@@ -134,6 +106,26 @@ class User
     public function setPassword($password)
     {
         $this->password = $password;
+
+        return $this;
+    }
+
+    /**
+     * Get the value of role
+     */ 
+    public function getRole()
+    {
+        return $this->role;
+    }
+
+    /**
+     * Set the value of role
+     *
+     * @return  self
+     */ 
+    public function setRole($role)
+    {
+        $this->role = $role;
 
         return $this;
     }

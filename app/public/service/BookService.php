@@ -28,7 +28,7 @@ class BookService
 
         
     }
-    public function setBook($title,$description,$author,$imageid){
+    public function setBook($title,$description,$author,$numberOfCopies){
 
 
         $data = array(
@@ -39,7 +39,7 @@ class BookService
 
             'author' => $author,
 
-            'imageid' => $imageid
+            'numberOfCopies' => $numberOfCopies
 
         );
         $this->insertBook($data);
@@ -49,7 +49,7 @@ class BookService
        // $db = DB::getInstance();
         $stmt = $this->db->prepare("INSERT into Book (title, `description`, author, imageId) VALUES (:title,  :description,:author, :imageId)");
 
-        $stmt->execute(["title" => $data['title'],  "description" => $data['description'],"author" => $data['author'], "imageId" => $data['imageid']]);
+        $stmt->execute(["title" => $data['title'],  "description" => $data['description'],"author" => $data['author'], "imageId" => $data['numberOfCopies']]);
     }
     
    

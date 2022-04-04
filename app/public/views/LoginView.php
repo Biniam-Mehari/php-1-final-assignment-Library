@@ -2,9 +2,10 @@
 //session_start();
 include 'Menubar.php';
 ?>
- <link rel="stylesheet" href="css/styleLogin.css">
+ 
 <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
-
+<link rel="stylesheet" href="css/styleLogin.css">
+<link rel="stylesheet" href="css/style1.css">
 
    
 
@@ -18,13 +19,15 @@ include 'Menubar.php';
         <label><b>Password</b> </label> 
         <br>     
         <input type="Password" name="pwd" id="pwd" placeholder="Password">    
-        <br><br>    
+        <br><br> 
+        <p id="displayerror"></p>   
         <button type="submit" name="submit">Login</button>          
           
     </form>    
     
     <!-- javascript to check user account and display error messsage  -->
-<script src="../js/login.js"></script>
+
 </div>    
+<script src="../js/login.js"></script>
 </body>    
 </html> 

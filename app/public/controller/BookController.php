@@ -9,19 +9,18 @@ class BookController
     }
     public function index()
     {
-        
-      include ('views/BookView.php');
+      $books = $this->bookService->getAllBooks();
+      include_once 'views/BookView.php';
+    
     }
     public function  addNewbookview(){
+        
         include ('views/AddBook.php');
     }
-    public function about()
-    {
-        echo "Home page about";
-    }
+   
 
     public function getAllBooks(){
-      return $this->bookService->getAllBooks();
+     $books = $this->bookService->getAllBooks();
       //include ('views/BookView.php');
     }
     public function addNewBook(){
@@ -29,12 +28,12 @@ class BookController
             $title = $_POST["title"];
             $description = $_POST["description"];
             $author = $_POST["author"];
-            $imageid = $_POST["imageid"];
+            $numberOfCopies = $_POST["numberOfCopies"];
           
         }
 
-       $this->bookService->setBook($title,$description,$author,$imageid);
-       include ('views/BookView.php');
+       $this->bookService->setBook($title,$description,$author,$numberOfCopies);
+       $this->index();
     }
 }
 

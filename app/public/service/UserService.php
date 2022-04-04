@@ -15,7 +15,7 @@ class UserService {
             $pwd = $_POST["pwd"];
         }
             
-        $stmt = $this->db-> getInstance()->prepare('SELECT * FROM users WHERE email = :email AND `password` = :password ;');
+        $stmt = $this->db-> getInstance()->prepare('SELECT * FROM `Account` WHERE email = :email AND `password` = :password ;');
         $stmt->execute(["email" => $email,"password"=>$pwd]);
 
         if($stmt->rowCount()>0){
@@ -24,7 +24,7 @@ class UserService {
             $_SESSION["user"] = $user;
           echo "<script>location.assign('../home')</script>";
         }else{
-            echo '<script>alert("username or password is incorrect!")</script>';
+            //echo '<script>alert("username or password is incorrect!")</script>';
             echo "<script>location.assign('../login')</script>";
         }
     }
@@ -40,7 +40,8 @@ class UserService {
 
             'email' => $email,
 
-            'password' => $pwd
+            'password' => $pwd,
+            'role' => "user"
 
         );
         $this->insertuser($data);
@@ -48,9 +49,9 @@ class UserService {
 
     public function insertuser($data){
         
-        $stmt = $this->db->prepare("INSERT into `Account` (firstName, lastName, email, `password`) VALUES (:firstName, :lastName, :email, :password)");
+        $stmt = $this->db->prepare("INSERT into `Account` (firstName, lastName, email, `password`,`role`) VALUES (:firstName, :lastName, :email, :password, :role)");
 
-        $stmt->execute(["firstName" => $data['firstName'], "lastName" => $data['lastName'], "email" => $data['email'], "password" => $data['password']]);
+        $stmt->execute(["firstName" => $data['firstName'], "lastName" => $data['lastName'], "email" => $data['email'], "password" => $data['password'], "role" => $data['role']]);
 
     }
 

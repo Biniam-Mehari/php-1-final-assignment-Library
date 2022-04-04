@@ -3,14 +3,13 @@
     padding: 0;
 }
 body{
-    background-color: #eee;
+    background-color: #FF7320 ;
 }
 
 nav{
     width: 100%;
     height: 100px;
-    background-color: #FF7320;
-    
+
 }
 
 ul{
@@ -39,24 +38,10 @@ ul li a:hover{
 .logo{
     width: 50px;
 }
-.loginposition{
-    padding: 0 0 0 400px;
-}
-.logincolor{
-    color: #FF7320;
-   
-}
+
 .container{
-    padding-top: 20px;
+    padding-top: 10px;
 }
-.profile{
-    width: 70px;
-    height: auto;
-  
-    margin: 20px 15px;
-}
-
-
 
 .pic{
     width: 200px;
@@ -67,9 +52,7 @@ ul li a:hover{
    padding-right: 50px;
 }
 
-.card{
-    padding-top: 50px important;
-}
+
 
 
 
