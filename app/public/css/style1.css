@@ -52,7 +52,14 @@ ul li a:hover{
    padding-right: 50px;
 }
 
+.bookcard{
+   margin-left: 100px;
+   margin-right: 100px;
+}
 
+.card{
+    margin-bottom: 10px;
+}
 
 
 

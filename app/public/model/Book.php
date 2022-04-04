@@ -3,11 +3,37 @@
 class Book
 {
 
-    private ?int $id = 1;
+    private ?int $bookId = 1;
     private ?string $title = null;
     private ?string $description = null;
     private ?string $author = null;
-    private ?string $imageId = null;
+    private ?string $numberOfCopies = null;
+
+    // public function __construct()
+
+    // {
+
+    //     $get_arguments       = func_get_args();
+
+    //     $number_of_arguments = func_num_args();
+
+    //     if (method_exists($this, $method_name = '__construct'.$number_of_arguments)) {
+
+    //         call_user_func_array(array($this, $method_name), $get_arguments);
+
+    //     }
+
+    // }
+
+    // public function __construct5($bookId,$title,$description,$author,$numberOfCopies){
+    //     $this->bookId = $bookId;
+    //     $this->title = $title;
+    //     $this->description = $description;
+    //     $this->author = $author;
+    //     $this->numberOfCopies = $numberOfCopies;
+        
+
+    // }
     
     /**
      * Get the value of title
@@ -70,42 +96,46 @@ class Book
         return $this;
     }
 
+   
+
+    
+
     /**
-     * Get the value of imageId
+     * Get the value of bookId
      */ 
-    public function getImageId()
+    public function getBookId()
     {
-        return $this->imageId;
+        return $this->bookId;
     }
 
     /**
-     * Set the value of imageId
+     * Set the value of bookId
      *
      * @return  self
      */ 
-    public function setImageId($imageId)
+    public function setBookId($bookId)
     {
-        $this->imageId = $imageId;
+        $this->bookId = $bookId;
 
         return $this;
     }
 
     /**
-     * Get the value of id
+     * Get the value of numberOfCopies
      */ 
-    public function getId()
+    public function getNumberOfCopies()
     {
-        return $this->id;
+        return $this->numberOfCopies;
     }
 
     /**
-     * Set the value of id
+     * Set the value of numberOfCopies
      *
      * @return  self
      */ 
-    public function setId($id)
+    public function setNumberOfCopies($numberOfCopies)
     {
-        $this->id = $id;
+        $this->numberOfCopies = $numberOfCopies;
 
         return $this;
     }

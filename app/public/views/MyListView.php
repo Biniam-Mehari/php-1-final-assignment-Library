@@ -10,17 +10,38 @@ include_once "model/MyList.php";
     
     <br><br>
 
-<div class="card" style="width: 18rem;">
-  <img src="..." class="card-img-top" alt="...">
-  <div class="card-body">
-    <h5 class="card-title">Card title</h5>
-    <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-    <a href="#" class="btn btn-primary">Read</a>
-    &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp&nbsp &nbsp
-    <a href="#" class="btn btn-primary">Return</a>
-    <p class="card-text">4 days left</p>
-  </div>
-</div>
+    <form action="controller/book.controller.php" method="post">
+    <div class="bookcard">
+
+        <div class="row">
+            <?php
+            foreach ($booksInMyList as $book) {
+            ?>
+            <br><br>
+                <div class="col-sm-4">
+                    <div class="card" >
+                        <div class="card-body">
+                            <h5 class="card-title">Title: <?php echo $book->getTitle() ?></h5>
+                            <p class="card-text">author: <?php echo $book->getAuthor() ?></p>
+                            <p class="card-text"><?php echo $book->getDescription() ?></p>
+                            <br><br>
+                            <p class="card-text">15 left to return</p>
+                            <button class="space" type="submit" name="submit">Read</button>
+                            <button class="space" type="submit" name="submit">Return</button>
+                        </div>
+                    </div>
+                </div>
+                <br><br>
+            
+            <?php
+            }
+            ?>
+        </div>
+        <br><br>
+    </div>
+    </div>
+
+</form>
 
 </body>
 </html>

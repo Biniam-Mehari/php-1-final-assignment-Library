@@ -10,19 +10,15 @@ class BookController
     public function index()
     {
       $books = $this->bookService->getAllBooks();
-      include_once 'views/BookView.php';
+      include ('views/BookView.php');
     
     }
-    public function  addNewbookview(){
+    public function addNewbookview(){
         
         include ('views/AddBook.php');
     }
    
 
-    public function getAllBooks(){
-     $books = $this->bookService->getAllBooks();
-      //include ('views/BookView.php');
-    }
     public function addNewBook(){
         if (isset($_POST["submit"])) {
             $title = $_POST["title"];
@@ -33,7 +29,7 @@ class BookController
         }
 
        $this->bookService->setBook($title,$description,$author,$numberOfCopies);
-       $this->index();
+      
     }
 }
 
