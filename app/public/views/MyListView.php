@@ -1,6 +1,5 @@
 <?php
 include 'Menubar.php';
-include_once "model/MyList.php";
 
 ?>
 
@@ -15,7 +14,7 @@ include_once "model/MyList.php";
 
         <div class="row">
             <?php
-            foreach ($booksInMyList as $book) {
+            foreach ($myBookList as $book) {
             ?>
             <br><br>
                 <div class="col-sm-4">
@@ -42,6 +41,6 @@ include_once "model/MyList.php";
     </div>
 
 </form>
-
+<script src="../js/myList.js"></script>
 </body>
 </html>

@@ -8,32 +8,34 @@ class Book
     private ?string $description = null;
     private ?string $author = null;
     private ?string $numberOfCopies = null;
+    public const possibleLendDays = 20;
+    private ?string $dateOfLend = null;
 
-    // public function __construct()
+    public function __construct()
 
-    // {
+    {
 
-    //     $get_arguments       = func_get_args();
+        $get_arguments       = func_get_args();
 
-    //     $number_of_arguments = func_num_args();
+        $number_of_arguments = func_num_args();
 
-    //     if (method_exists($this, $method_name = '__construct'.$number_of_arguments)) {
+        if (method_exists($this, $method_name = '__construct'.$number_of_arguments)) {
 
-    //         call_user_func_array(array($this, $method_name), $get_arguments);
+            call_user_func_array(array($this, $method_name), $get_arguments);
 
-    //     }
+        }
 
-    // }
+    }
 
-    // public function __construct5($bookId,$title,$description,$author,$numberOfCopies){
-    //     $this->bookId = $bookId;
-    //     $this->title = $title;
-    //     $this->description = $description;
-    //     $this->author = $author;
-    //     $this->numberOfCopies = $numberOfCopies;
+    public function __construct5($bookId,$title,$description,$author,$numberOfCopies){
+        $this->bookId = $bookId;
+        $this->title = $title;
+        $this->description = $description;
+        $this->author = $author;
+        $this->numberOfCopies = $numberOfCopies;
         
 
-    // }
+    }
     
     /**
      * Get the value of title
@@ -136,6 +138,26 @@ class Book
     public function setNumberOfCopies($numberOfCopies)
     {
         $this->numberOfCopies = $numberOfCopies;
+
+        return $this;
+    }
+
+    /**
+     * Get the value of dateOfLend
+     */ 
+    public function getDateOfLend()
+    {
+        return $this->dateOfLend;
+    }
+
+    /**
+     * Set the value of dateOfLend
+     *
+     * @return  self
+     */ 
+    public function setDateOfLend($dateOfLend)
+    {
+        $this->dateOfLend = $dateOfLend;
 
         return $this;
     }

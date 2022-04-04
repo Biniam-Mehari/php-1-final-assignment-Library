@@ -25,13 +25,18 @@ session_start();
         }
         ?>
         
-        <li><a href="addnewbookview">Add new Book</a></li>
+        
 
         <?php
         if (isset($_SESSION["user"])) {
+         
           echo ' <li><a href="home">Home</a></li>';
           echo ' <li><a href="BookView">Books</a></li>';
+         // echo ' <li><a href="mylist?id='.$_SESSION["user"]->userId.'">My List</a></li>';
           echo ' <li><a href="mylist">My List</a></li>';
+          if ($_SESSION["user"]->role === "admin"){
+            echo ' <li><a href="addnewbookview">Manage Books</a></li>';
+          }
           echo ' <li> Welcome ' . $_SESSION["user"]->firstName . '  ' . $_SESSION["user"]->lastName . '<li>';
           echo '<li><a  href="logout">Logout</a></li>';
         } else {

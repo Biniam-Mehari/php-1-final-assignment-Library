@@ -1,4 +1,5 @@
 <?php
+session_start();
 include_once "service/BookService.php";
 class MyListController
 {
@@ -10,8 +11,16 @@ class MyListController
 
     public function index()
     {
-        //$booksInMyList = $this->bookService->getAllBooksbyId();
-        include ('views/MyListView.php');
+       
+
+       $id = $_SESSION["user"]->userId;    
+    $myBookList = $this->bookService->getMyBookListbyId( $id);
+  // $date = date("d-m-y");
+   //var_dump( $date);
+//    $id = ($_GET['id']);  
+//         var_dump( $id);
+
+    include ('views/MyListView.php');
     }
    
     public function about()

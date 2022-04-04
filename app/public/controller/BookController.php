@@ -10,6 +10,7 @@ class BookController
     public function index()
     {
       $books = $this->bookService->getAllBooks();
+      
       include ('views/BookView.php');
     
     }
