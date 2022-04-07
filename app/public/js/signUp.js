@@ -116,23 +116,6 @@ function setErroremptybydefault() {
     document.getElementById("displayerrorpassword2").innerHTML = "";
 }
 
-function emailAlreadyExist(params) {
-
-    let formData = new FormData(params);
-    fetch("../../API/SignUp.php", {
-        method: 'POST',
-        body: formData
-    }).then(response => response.text()).then(loginStatus => {
-        loginStatus = JSON.parse(loginStatus);
-
-        if (loginStatus.result === true) {
-            return true;
-        } else {
-            return false;
-        }
-    });
-
-}
 
 
 

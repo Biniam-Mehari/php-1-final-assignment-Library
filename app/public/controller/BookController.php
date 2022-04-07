@@ -14,9 +14,9 @@ class BookController
       include ('views/BookView.php');
     
     }
-    public function addNewbookview(){
-        
-        include ('views/AddBook.php');
+    public function manageBooksview(){
+        $books = $this->bookService->getAllBooks();
+        include ('views/manageBook.php');
     }
    
 

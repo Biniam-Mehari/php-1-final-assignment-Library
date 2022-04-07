@@ -56,16 +56,28 @@ class SwitchRouter
                 $controller = new MyListController();
                 $controller->index();
                 break;
-            case 'addnewbookview':
+            case 'addToMyList':
+                require __DIR__ . '/controller/MyListController.php';
+                $controller = new MyListController();
+                $controller->addToMyList();
+                break;
+            case 'returnBook':
+                require __DIR__ . '/controller/MyListController.php';
+                $controller = new MyListController();
+                $controller->returnBook();
+                break;
+
+            case 'managebooksview':
                 require __DIR__ . '/controller/BookController.php';
                 $controller = new BookController();
-                $controller->addNewbookview();
+                $controller->manageBooksview();
                 break;
             case 'newbook/form':
                 require __DIR__ . '/controller/BookController.php';
                 $controller = new BookController();
                 $controller->addNewbook();
                 break;
+
 
             default:
                 require __DIR__ . '/controller/HomeController.php';

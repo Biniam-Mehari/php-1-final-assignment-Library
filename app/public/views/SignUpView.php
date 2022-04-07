@@ -15,7 +15,7 @@ include 'Menubar.php';
         <br>
         <input type="text" name="fname" id="fname" placeholder="first name">
         <br>
-        <small id="displayerrorfname"></small>
+        <small id="displayerrorfname" ></small>
         <br>
 
         <label><b>Last Name </b> </label>

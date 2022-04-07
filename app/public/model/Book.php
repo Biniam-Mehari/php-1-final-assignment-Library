@@ -3,13 +3,13 @@
 class Book
 {
 
-    private ?int $bookId = 1;
+    private ?int $bookId = null;
     private ?string $title = null;
     private ?string $description = null;
     private ?string $author = null;
     private ?string $numberOfCopies = null;
-    public const possibleLendDays = 20;
     private ?string $dateOfLend = null;
+    
 
     public function __construct()
 

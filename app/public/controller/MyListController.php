@@ -11,20 +11,26 @@ class MyListController
 
     public function index()
     {
-       
-
-       $id = $_SESSION["user"]->userId;    
+    $id = $_SESSION["user"]->userId;    
     $myBookList = $this->bookService->getMyBookListbyId( $id);
-  // $date = date("d-m-y");
-   //var_dump( $date);
-//    $id = ($_GET['id']);  
-//         var_dump( $id);
-
     include ('views/MyListView.php');
     }
    
-    public function about()
+    public function addToMyList()
     {
-        echo "Home page about";
+        if (isset($_POST["submit"])) {
+            $bookId = $_POST["bookId"];        
+        }
+        $date=date("d-m-y");
+        $id = $_SESSION["user"]->userId;
+       $this->bookService->setInfoForMyList($id, $bookId, $date);
+    }
+    public function returnBook()
+    {
+        if (isset($_POST["submit"])) {
+            $bookId = $_POST["bookId"];        
+        }
+        $id = $_SESSION["user"]->userId;
+       $this->bookService->setInfoToreturnBook($id, $bookId);
     }
 }

@@ -10,38 +10,47 @@ echo (' <link rel="stylesheet" href="css/style1.css">');
 
 
 ?>
-<form action="controller/book.controller.php" method="post">
-    <div class="bookcard">
 
-        <div class="row">
-            <?php
-            foreach ($books as $book) {
-            ?>
-            <br><br>
-                <div class="col-sm-4">
-                    <div class="card" >
+<div class="bookcard">
+    <div class="row">
+        <?php
+         if (count($books)==0) {
+            echo("There is no book to read. incase of a problem contact the library Admin.");
+        }else{
+        foreach ($books as $book) {
+        ?>
+
+            <br>
+
+            <div class="col-sm-4">
+                <form id="addtomylist" action="addToMyList" method="post">
+                    <div class="card">
                         <div class="card-body">
                             <h5 class="card-title">Title: <?php echo $book->getTitle() ?></h5>
                             <p class="card-text">author: <?php echo $book->getAuthor() ?></p>
                             <p class="card-text"><?php echo $book->getDescription() ?></p>
                             <br><br>
-                            <p class="card-text">15 left</p>
-                            <button class="space" type="submit" name="submit">Lend book</button>
+                            <input id="bookId" name="bookId" type="text" value=<?php echo $book->getBookId() ?> hidden>
+                            <input id="userId" name="userId" type="text" value=<?php echo $_SESSION["user"]->userId ?> hidden>
+                            <button class="space" id="submit" type="submit" name="submit">Lend book</button>
+                            <small id="displayerror"></small>
                         </div>
                     </div>
-                </div>
-                <br><br>
-            
-            <?php
-            }
-            ?>
-        </div>
-        <br><br>
-    </div>
-    </div>
+                </form>
+                <br>
+            </div>
+        <?php
+        }
+    }
+        ?>
 
-</form>
 
+
+
+    </div>
+</div>
+
+<script src="../js/book.js"></script>
 </body>
 
 </html>
