@@ -58,5 +58,27 @@ span{
     font-size: 17px;  
 } 
 
-
+.removebook{
+    color: white;
+    padding: 8px;
+    text-align: center;
+    background-color: red;
+    border-radius: 8px;
+}
+.addbook{
+    color: white;
+  padding: 8px;
+  text-align: center;
+    background-color: green;
+    border-radius: 8px;
+    margin-right: 10px;
+}
+.updatebook{
+    color: white;
+    padding: 8px;
+    text-align: center;
+    background-color: blue;
+    border-radius: 8px;
+    margin-right: 10px;
+}
 

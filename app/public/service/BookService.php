@@ -42,7 +42,7 @@ class BookService extends PDO
 
         );
         $this->insertBook($data);
-        echo "<script>location.assign('../BookView')</script>";
+       // echo "<script>location.assign('../managebooksview')</script>";
     }
     public function insertBook($data)
     {
@@ -87,11 +87,9 @@ class BookService extends PDO
 
             'returned' => 0
         );
-        var_dump($id);
-        var_dump($bookId);
-        var_dump($date);
+       
         $this->insertlendinfo($data);
-        echo "<script>location.assign('../mylist')</script>";
+     //echo "<script>location.assign('../mylist')</script>";
     }
 
     public function insertlendinfo($data)

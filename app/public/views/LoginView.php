@@ -21,7 +21,7 @@ include 'Menubar.php';
         <input type="Password" name="pwd" id="pwd" placeholder="Password">    
         <br><br> 
         <p id="displayerror"></p>   
-        <button type="submit" name="submit">Login</button>          
+        <button id="loginbutton"type="submit" name="submit">Login</button>          
           
     </form>    
     

@@ -22,7 +22,7 @@ let loginForm = document.getElementById("login");
          
             if(loginStatus.result === true){
                 localStorage.setItem("CanLogin","Yes");
-                document.getElementById("loginBTN").click();
+                document.getElementById("loginbutton").click();
             }else{
                localStorage.setItem("CanLogin","No")
                document.getElementById("displayerror").innerHTML = loginStatus.result;

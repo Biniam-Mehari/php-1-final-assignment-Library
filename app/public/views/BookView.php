@@ -32,25 +32,27 @@ echo (' <link rel="stylesheet" href="css/style1.css">');
                             <br><br>
                             <input id="bookId" name="bookId" type="text" value=<?php echo $book->getBookId() ?> hidden>
                             <input id="userId" name="userId" type="text" value=<?php echo $_SESSION["user"]->userId ?> hidden>
-                            <button class="space" id="submit" type="submit" name="submit">Lend book</button>
+                            <button class="space" id="lendbook" type="submit" name="submit">Lend book</button>
                             <small id="displayerror"></small>
                         </div>
                     </div>
                 </form>
+               
                 <br>
             </div>
+            
         <?php
         }
     }
         ?>
 
 
-
+<script src="../js/book.js"></script>
 
     </div>
 </div>
 
-<script src="../js/book.js"></script>
+
 </body>
 
 </html>

@@ -7,7 +7,7 @@ const pwd = document.getElementById("pwd");
 const rpwd = document.getElementById("rpwd");
 
 
-form.addEventListener('submit', (e) => {
+form.addEventListener('signup', (e) => {
     
     setErroremptybydefault();
    
@@ -63,10 +63,10 @@ function checkInputsForError() {
         fetch("../../API/SignUp.php", {
             method: 'POST',
             body: formData
-        }).then(response => response.text()).then(loginStatus => {
-            loginStatus = JSON.parse(loginStatus);
+        }).then(response => response.text()).then(signupemailstatus => {
+            signupemailstatus = JSON.parse(signupemailstatus);
 
-            if (loginStatus.result === true) {
+            if (signupemailstatus.result === true) {
                 setErrorFor("displayerroremail", 'email already exist')
                 
                 error += 1;

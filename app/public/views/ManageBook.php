@@ -12,52 +12,64 @@ include_once "model/Book.php";
 
 
 <div class="row">
-    <div class="col-sm-5">
-
-    <div class="bookcard">
-    <div class="row">
-        <?php
-         if (count($books)==0) {
-            echo("There is no book to read. incase of a problem contact the library Admin.");
-        }else{
-        foreach ($books as $book) {
-        ?>
-
-            <br>
-
-            
-                <form id="addtomylist" action="addToMyList" method="post">
-                   
-                            <h5 >Title: <?php echo $book->getTitle() ?></h5>
-                            <p >author: <?php echo $book->getAuthor() ?></p>
-                            <button  id="submit" type="submit" name="edit"> edit</button>
-                            <button  id="submit" type="submit" name="remove"> remove</button>
-                            <input id="bookId" name="bookId" type="text" value=<?php echo $book->getBookId() ?> hidden>
-                            <input id="userId" name="userId" type="text" value=<?php echo $_SESSION["user"]->userId ?> hidden>
-                            <br><br>
-                    
-                </form>
-                <br>
-            
-        <?php
-        }
-    }
-        ?>
-
-
-
-
-    </div>
-</div>
-
-    </div>
     <div class="col-sm-6">
-        <h2>Add New Book</h2><br>
+        <table class="table" id = 'dsTable' >
+            <thead>
+                <tr>
+                    <th hidden>Book Id</th>
+                    <th>Book Title</th>
+                    <th >Author</th>
+                    <th hidden>Number of copies</th>
+                    <th hidden>Description</th>
+                    <th>edit</th>
+                    
+                </tr>
+            </thead>
+            <?php
+            if (count($books) == 0) {
+                echo ("There is no book to read. incase of a problem contact the library Admin.");
+            } else {
+                foreach ($books as $book) {
+            ?>
+
+                   
+                    <tbody>
+                     
+                            <tr>
+                                <td hidden> <?php echo $book->getBookId() ?></td>
+                                <td > <?php echo $book->getTitle() ?></td>
+                                <td > <?php echo $book->getAuthor() ?></td>
+                                <td hidden> <?php echo $book->getNumberOfCopies() ?></td>
+                                <td hidden> <?php echo $book->getDescription() ?></td>
+                                <td> <button id="submit" type="submit" name="edit"> edit</button></td>
+                               
+                                </td>
+
+                            </tr>
+                        
+                    </tbody>
+            <?php
+                }
+            }
+            ?>
+
+
+        </table>
+
+
+    </div>
+
+
+
+
+    <div class="col-sm-6">
+        <h2>Book information</h2><br>
         <div class="login">
 
 
             <form action="newbook/form" method="post">
                 <label><b>Title</b></label>
+                
                 <br>
                 <input type="text" name="title" id="title" placeholder="title" required>
                 <br> <br>
@@ -74,17 +86,21 @@ include_once "model/Book.php";
                 <br>
                 <input type="text" name="description" id="description" placeholder="description" required>
                 <br><br>
+                <input type="text" name="bookid" id="bookid" hidden>
 
-                <button type="submit" name="submit">Add Book</button>
+                <button type="submit" class="addbook" name="addbook">Add Book</button>
+                <button type="submit" class="updatebook" name="updatebook">Update</button>
+                <button type="submit" class="removebook" name="removebook">Remove</button>
                 <br>
                 <section id="ErrorMessage"></section>
             </form>
 
-            <!-- javascript to check user information and display error messsage  -->
+
 
         </div>
     </div>
 </div>
+<script src="../js/manageBook.js"></script>
 </body>
 
 </html>
