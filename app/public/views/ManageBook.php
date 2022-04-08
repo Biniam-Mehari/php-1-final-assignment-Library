@@ -73,7 +73,7 @@ include_once "model/Book.php";
 <!-- this form is to add, edit, remove books from and to the database -->
             <form class="bookinfo" id="bookinfo" action="newbook/form" method="post">
                 <label for="title">Title</label>
-                
+                <br>
                 <input type="text" name="title" id="title" placeholder="title" required>
                 <br> <br>
 
