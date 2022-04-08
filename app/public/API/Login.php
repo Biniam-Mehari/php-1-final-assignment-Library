@@ -14,7 +14,8 @@ $database = DB::getInstance();
 
 $login =  $database->prepare("SELECT * FROM Account WHERE `password` = :password AND email = :email");
 $login->execute(["password"=>$_POST['pwd'], "email"=>$_POST['email']]);
-
+//check there is a user in the result this will return true and user will be sign in 
+// if there is no user it will return false and user will be notified that ther is no account 
 if($login->rowCount()===1){
 print_r(json_encode(["result"=>true]));
 }else{

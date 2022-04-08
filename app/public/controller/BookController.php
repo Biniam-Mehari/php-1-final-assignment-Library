@@ -7,6 +7,7 @@ class BookController
     {
         $this->bookService = new BookService();
     }
+    //directing to bookview and sendind array of books
     public function index()
     {
       $books = $this->bookService->getAllBooks();
@@ -14,6 +15,7 @@ class BookController
       include ('views/BookView.php');
     
     }
+    //directing to manage books / role must be admin to check this 
     public function manageBooksview(){
 
         $books = $this->bookService->getAllBooks();

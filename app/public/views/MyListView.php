@@ -16,6 +16,7 @@ include 'Menubar.php';
 
     <div class="row">
         <?php
+        // this will fill the books in a list oif the current user by
         if (count($myBookList)==0) {
             echo("There is no book in your list. Add some books to show it here and read.");
         }else{
@@ -31,7 +32,7 @@ include 'Menubar.php';
                             <p class="card-text"><?php echo $book->getDescription() ?></p>
                             <input name="bookId" type="text" value=<?php echo $book->getBookId() ?> hidden>
                             <br><br>
-                            <button class="space" type="submit" name="submit">Return</button><br>
+                            <button class="btn btn-success" type="submit" name="submit">Return</button><br>
 
                         </div>
                     </div>
@@ -51,7 +52,7 @@ include 'Menubar.php';
 </div>
 
 
-<script src="../js/myList.js"></script>
+
 </body>
 
 </html>

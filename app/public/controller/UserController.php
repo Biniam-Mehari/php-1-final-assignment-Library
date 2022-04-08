@@ -23,7 +23,7 @@ class UserController
     }
 
     public function logOutUser(){
-        session_start();
+    
         session_unset();
         session_destroy();
         include_once ('views/HomeView.php');

@@ -6,11 +6,12 @@ const email = document.getElementById("email");
 const pwd = document.getElementById("pwd");
 const rpwd = document.getElementById("rpwd");
 
-
-form.addEventListener('signup', (e) => {
+//listner to singup form on submit
+form.addEventListener('submit', (e) => {
     
     setErroremptybydefault();
    
+    //check all the possible error and receive true or fals
     if (checkInputsForError()) {
         e.preventDefault();
     }
@@ -104,10 +105,12 @@ function checkInputsForError() {
 
 }
 
+//send error to the html part to show the user
 function setErrorFor(input, message) {
     document.getElementById(input).innerHTML = message;
 }
 
+//clearing error message
 function setErroremptybydefault() {
     document.getElementById("displayerrorfname").innerHTML = "";
     document.getElementById("displayerrorlname").innerHTML = "";

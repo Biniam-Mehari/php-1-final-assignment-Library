@@ -1,5 +1,6 @@
 <?php
-session_start();
+
+
 include_once "service/BookService.php";
 class MyListController
 {
@@ -9,13 +10,15 @@ class MyListController
         $this->bookService = new BookService();
     } 
 
+    //shows the list of book by user id
     public function index()
     {
-    $id = $_SESSION["user"]->userId;    
-    $myBookList = $this->bookService->getMyBookListbyId( $id);
+    $userId = $_SESSION["user"]->userId;  
+    $myBookList = $this->bookService->getMyBookListbyId( $userId);
     include ('views/MyListView.php');
     }
    
+    //adding book to a list 
     public function addToMyList()
     {
         if (isset($_POST["submit"])) {
@@ -25,6 +28,8 @@ class MyListController
         $id = $_SESSION["user"]->userId;
        $this->bookService->setInfoForMyList($id, $bookId, $date);
     }
+
+    //returning a book after reading
     public function returnBook()
     {
         if (isset($_POST["submit"])) {

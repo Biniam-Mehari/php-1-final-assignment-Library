@@ -1,26 +1,37 @@
-create or replace table article
-(
-    id       int,
-    title    varchar(255)           not null,
-    content  varchar(10000)         null,
-    author   varchar(255)           not null,
-    datetime datetime default now() not null
-)
-    comment 'Article class';
+CREATE DATABASE Librarydb;
 
-create unique index article_id_uindex
-    on article (id);
+CREATE TABLE Account (
+    userId int(11) NOT NULL Primary Key AUTO_INCREMENT,
+    firstName varchar(255) NOT NULL,
+   lastName varchar(255) NOT NULL,
+    email varchar(255) NOT NULL,
+    `password` varchar(255) NOT NULL,
+    `role` varchar(255) NOT NULL
+);
 
-alter table article
-    add constraint article_pk
-        primary key (id);
+INSERT INTO Account (firstName, lastName, email,`password`, `role`)
+VALUES ("Admin", "admin", "admin@gmail.com","admin","admin"),
+ ("User", "user", "user@gmail.com","user","user");
 
-alter table article
-    modify id int auto_increment;
+CREATE TABLE Book (
+    bookId int(11) NOT NULL Primary Key AUTO_INCREMENT,
+    title varchar(255) NOT NULL,
+   `description` varchar(255) NOT NULL,
+    author varchar(255) NOT NULL,
+    numberOfCopies int(11) NOT NULL
+    
+);
 
-insert into article (title, content, author)
-values ('Article 1', 'content 1', 'Author 1');
-insert into article (title, content, author)
-values ('Article 2', 'content 2', 'Author 2');
-insert into article (title, content, author)
-values ('Article 3', 'content 3', 'Author 3');
+INSERT INTO Book (title, `description`, author,numberOfCopies)
+VALUES ("The Adventures of Tom Sawyer", "This book ia about a kid and his life", "Mark Twain","45"),
+ ("Adventures of Sherlock Holmes", "The adventure of sherlock holmes is based on a detective fiction ", "Sir Arthur Conan Doyle","34");
+
+
+CREATE TABLE LendBook (
+    lendId int(11) NOT NULL Primary Key AUTO_INCREMENT,
+    dateOFLend varchar(255) NOT NULL,
+    returned varchar(255) NOT NULL,
+    bookId int(11) NOT NULL,
+    userId int(11) NOT NULL
+    
+);

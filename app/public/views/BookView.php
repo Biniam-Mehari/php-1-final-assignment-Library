@@ -13,9 +13,12 @@ echo (' <link rel="stylesheet" href="css/style1.css">');
 <div class="bookcard">
     <div class="row">
         <?php
+        // this will check if my array is empty or not 
          if (count($books)==0) {
             echo("There is no book to read. incase of a problem contact the library Admin.");
         }else{
+
+            //filling all the book information
         foreach ($books as $book) {
         ?>
 
@@ -26,12 +29,13 @@ echo (' <link rel="stylesheet" href="css/style1.css">');
                     <div class="card">
                         <div class="card-body">
                             <h5 class="card-title">Title: <?php echo $book->getTitle() ?></h5>
-                            <p class="card-text">author: <?php echo $book->getAuthor() ?></p>
+                            <h6 class="card-text">Author: <?php echo $book->getAuthor() ?></h6>
                             <p class="card-text"><?php echo $book->getDescription() ?></p>
                             <br><br>
                             <input id="bookId" name="bookId" type="text" value=<?php echo $book->getBookId() ?> hidden>
                             <input id="userId" name="userId" type="text" value=<?php echo $_SESSION["user"]->userId ?> hidden>
-                            <button class="space" id="lendbook" type="submit" name="submit">Lend book</button>
+                            <button  class="btn btn-warning" id="lendbook" type="submit" name="submit">Lend book</button>
+                            <p class="card-text text-success"> <?php echo $book->getNumberOfCopies() ?> copies Available</p>
                             <small id="displayerror"></small>
                         </div>
                     </div>
@@ -46,7 +50,6 @@ echo (' <link rel="stylesheet" href="css/style1.css">');
         ?>
 
 
-<script src="../js/book.js"></script>
 
     </div>
 </div>

@@ -1,6 +1,6 @@
 
 var table = document.getElementById("dsTable"),rIndex;
-
+//manipulating data from the table to the form in order to edit or remove
 for(var i = 1; i < table.rows.length; i++){
     table.rows[i].onclick = function() {
         rIndex = this.rowIndex;
@@ -12,14 +12,17 @@ for(var i = 1; i < table.rows.length; i++){
     }
 }
 
+//checks if number of copies are in proper data type
+const form = document.getElementById("bookinfo");
+const copies = document.getElementById("numberOfCopies");
+form.addEventListener('submit', (e) => {
+    const numberOfCopies = copies.value.trim();
+ 
+    if (isNaN(numberOfCopies)) {
+        e.preventDefault();
+        document.getElementById("errornumber").innerHTML = " Number of copies must be numbers";
+    }
 
-// let btn = document.getElementById("clear");
-// btn.addEventListener('click', event => {
-//     document.getElementById("bookid").value = "";
-//     document.getElementById("title").value = "";
-//     document.getElementById("author").value = "";
-//     document.getElementById("numberOfCopies").value = "";
-//     document.getElementById("description").value = "";
-// });
-       
+
+});      
    

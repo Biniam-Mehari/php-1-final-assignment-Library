@@ -1,7 +1,4 @@
 // check login credentials and desplay error message 
-
-
-
 let loginForm = document.getElementById("login");
     loginForm.onsubmit = (form) => {
         if(localStorage.getItem("CanLogin")=="Yes"){

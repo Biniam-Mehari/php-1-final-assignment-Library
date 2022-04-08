@@ -66,10 +66,16 @@ ul li a:hover{
     margin-left: 10px;
 }
 .username{
-    margin-left: 600px;
+    
     margin-right: 20px;
     color: #f5efef;
     font-size:xx-large;
+    margin-inline-end: 0%;
 }
+
+.bookinfo sm{
+    color: red;
+}
+
 
 

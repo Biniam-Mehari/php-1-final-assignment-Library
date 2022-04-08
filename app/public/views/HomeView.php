@@ -7,6 +7,7 @@ include ('Menubar.php') ;
 <link rel="stylesheet" href="css/styleLogin.css">
 <link rel="stylesheet" href="css/style1.css">
    
+<!-- This page is the home vie and have hard coded information -->
   <div class="container"> 
     <div class="row">
        <div class="col-sm-4">

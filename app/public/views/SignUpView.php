@@ -8,9 +8,11 @@ include 'Menubar.php';
 <link rel="stylesheet" href="css/style1.css">
 
 
-<h2>Sign-Up</h2><br>
+
 <div class="login">
-    <form id="signupForm" action="signup/form" method="post">
+<h2 class="text-dark">Sign-Up</h2><br>
+<!-- filling data to sing up a user -->
+    <form class="bookinfo" id="signupForm" action="signup/form" method="post">
         <label><b>First Name</b></label>
         <br>
         <input type="text" name="fname" id="fname" placeholder="first name">

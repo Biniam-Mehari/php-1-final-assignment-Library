@@ -13,7 +13,8 @@ include_once "model/Book.php";
 
 <div class="row">
     <div class="col-md-6">
-        <br><br>
+        <br>
+        <!-- table for list of books -->
         <table class="table" id = 'dsTable' >
             <thead>
                 <tr>
@@ -27,6 +28,7 @@ include_once "model/Book.php";
                 </tr>
             </thead>
             <?php
+            // this methode checks if there is a data in the array of books or not and display accordingly
             if (count($books) == 0) {
                 echo ("There is no book to read. incase of a problem contact the library Admin.");
             } else {
@@ -42,7 +44,7 @@ include_once "model/Book.php";
                                 <td > <?php echo $book->getAuthor() ?></td>
                                 <td hidden> <?php echo $book->getNumberOfCopies() ?></td>
                                 <td hidden> <?php echo $book->getDescription() ?></td>
-                                <td> <button id="submit" type="submit" name="edit"> edit</button></td>
+                                <td> <button id="submit" type="submit" class="btn btn-dark" name="edit"> edit</button></td>
                                
                                 </td>
 
@@ -64,14 +66,14 @@ include_once "model/Book.php";
 
 
     <div class="col-sm-6">
-        <h2>Book information</h2><br>
+    <br>
         <div class="login">
+        <h2 class="text-dark">Book information</h2><br>
 
-
-            <form action="newbook/form" method="post">
-                <label><b>Title</b></label>
+<!-- this form is to add, edit, remove books from and to the database -->
+            <form class="bookinfo" id="bookinfo" action="newbook/form" method="post">
+                <label for="title">Title</label>
                 
-                <br>
                 <input type="text" name="title" id="title" placeholder="title" required>
                 <br> <br>
 
@@ -82,16 +84,18 @@ include_once "model/Book.php";
                 <label><b>Number of copies</b></label>
                 <br>
                 <input type="text" name="numberOfCopies" id="numberOfCopies" placeholder="number of copies" required>
+                <br>
+                <small id="errornumber" class="errorcolour"></small>
                 <br><br>
                 <label><b>Description</b> </label>
                 <br>
-                <input type="text" name="description" id="description" placeholder="description" required>
-                <br><br>
+               <textarea class="form-control" name="description" id="description" cols="20" rows="3"></textarea>
+                  <br><br>
                 <input type="text" name="bookid" id="bookid" hidden>
 
-                <button type="submit" class="addbook" name="addbook">Add Book</button>
-                <button type="submit" class="updatebook" name="updatebook">Update</button>
-                <button type="submit" class="removebook" name="removebook">Remove</button>
+                <button type="submit" id="submit" class="btn btn-success" name="addbook">Add Book</button>
+                <button type="submit" id="submit" class="btn btn-warning" name="updatebook">Update</button>
+                <button type="submit" id="submit" class="btn btn-danger" name="removebook">Remove</button>
                 <br>
                 <section id="ErrorMessage"></section>
             </form>
@@ -102,6 +106,7 @@ include_once "model/Book.php";
         </div>
     </div>
 </div>
+<!-- connecting to js in order to check wheter there is a correct input or not -->
 <script src="../js/manageBook.js"></script>
 
 </body>

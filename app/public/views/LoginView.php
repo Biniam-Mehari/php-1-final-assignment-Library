@@ -8,10 +8,12 @@ include 'Menubar.php';
 <link rel="stylesheet" href="css/style1.css">
 
    
-
-    <h2>Login Page</h2><br>    
-    <div class="login">    
-    <form id="login" method="post" action="login/form">    
+<!-- login form -->
+   
+    <div class="login">  
+    <h2 class="text-dark ">Login Page</h2>  <br>  
+    <form id="login" method="post" action="login/form"> 
+      
         <label><b>email</b></label>   
         <br>  
         <input type="text" name="email" id="email" placeholder="email">    
@@ -21,7 +23,7 @@ include 'Menubar.php';
         <input type="Password" name="pwd" id="pwd" placeholder="Password">    
         <br><br> 
         <p id="displayerror"></p>   
-        <button id="loginbutton"type="submit" name="submit">Login</button>          
+        <button id="loginbutton"type="submit" class="btn btn-dark" name="submit">Login</button>          
           
     </form>    
     
