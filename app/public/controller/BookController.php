@@ -31,16 +31,15 @@ class BookController
         }
         elseif(isset($_POST["removebook"])){
             $id = $_POST["bookid"];
-            var_dump($id);
-           // $this->bookService->removeBook($id);
+           $this->bookService->removeBook($id);
         }
         elseif(isset($_POST["updatebook"])){
-            $id = $_POST["bookid"];
+            $bookId = $_POST["bookid"];
             $title = $_POST["title"];
             $description = $_POST["description"];
             $author = $_POST["author"];
             $numberOfCopies = $_POST["numberOfCopies"];
-           // $this->bookService->setBook($title,$description,$author,$numberOfCopies);
+            $this->bookService->updateBook($title,$description,$author,$numberOfCopies,$bookId);
         }
 
       

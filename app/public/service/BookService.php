@@ -19,7 +19,7 @@ class BookService extends PDO
     public function getAllBooks()
     {
         //$db = DB::getInstance();
-        $stmt = $this->db->prepare("select bookId,title,description,author,numberOfCopies from Book");
+        $stmt = $this->db->prepare("select bookId,title,description,author,numberOfCopies from Book ORDER BY bookId DESC");
         $stmt->setFetchMode(PDO::FETCH_CLASS, 'Book');
         $stmt->execute();
 
@@ -42,7 +42,7 @@ class BookService extends PDO
 
         );
         $this->insertBook($data);
-       // echo "<script>location.assign('../managebooksview')</script>";
+        echo "<script>location.assign('../managebooksview')</script>";
     }
     public function insertBook($data)
     {
@@ -89,7 +89,7 @@ class BookService extends PDO
         );
        
         $this->insertlendinfo($data);
-     //echo "<script>location.assign('../mylist')</script>";
+     echo "<script>location.assign('../mylist')</script>";
     }
 
     public function insertlendinfo($data)
@@ -117,5 +117,20 @@ class BookService extends PDO
     {
         $stmt = $this->db->prepare("UPDATE LendBook SET returned= :returned WHERE bookId= :bookId AND userId= :userId");
         $stmt->execute(["returned" => $data['returned'], "bookId" => $data['bookId'],  "userId" => $data['userid']]);
+    }
+
+
+    public function removeBook($id)
+    {
+        $stmt = $this->db->prepare("Delete from Book WHERE bookId= :bookId");
+        $stmt->execute(["bookId" =>$id]);
+        echo "<script>location.assign('../managebooksview')</script>";
+    }
+
+    public function updateBook($title,$description,$author,$numberOfCopies,$bookId)
+    {
+        $stmt = $this->db->prepare("UPDATE Book SET title= :title, `description`= :description ,author= :author, numberOfCopies= :numberOfCopies WHERE bookId= :bookId");
+        $stmt->execute(["title" => $title, "description" => $description,  "author" => $author, "numberOfCopies" => $numberOfCopies,  "bookId" => $bookId]);
+        echo "<script>location.assign('../managebooksview')</script>";
     }
 }

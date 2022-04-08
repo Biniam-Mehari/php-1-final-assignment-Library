@@ -12,7 +12,8 @@ include_once "model/Book.php";
 
 
 <div class="row">
-    <div class="col-sm-6">
+    <div class="col-md-6">
+        <br><br>
         <table class="table" id = 'dsTable' >
             <thead>
                 <tr>
@@ -94,13 +95,15 @@ include_once "model/Book.php";
                 <br>
                 <section id="ErrorMessage"></section>
             </form>
-
+            <br>
+             
 
 
         </div>
     </div>
 </div>
 <script src="../js/manageBook.js"></script>
+
 </body>
 
 </html>

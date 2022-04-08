@@ -12,3 +12,14 @@ for(var i = 1; i < table.rows.length; i++){
     }
 }
 
+
+// let btn = document.getElementById("clear");
+// btn.addEventListener('click', event => {
+//     document.getElementById("bookid").value = "";
+//     document.getElementById("title").value = "";
+//     document.getElementById("author").value = "";
+//     document.getElementById("numberOfCopies").value = "";
+//     document.getElementById("description").value = "";
+// });
+       
+   
